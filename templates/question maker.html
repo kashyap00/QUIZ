@@ -1,0 +1,67 @@
+{% extends 'base.html'%}
+{% block body%}
+<style>
+    .cand{
+        margin-top:30px;
+        margin-left:50px;
+    }
+    .col-6 button{
+      margin-top:5px;
+    }
+</style>
+<form method="POST" ,action="/questionmaker">
+  {% csrf_token %} 
+  <div class="cand">
+    <div class="row g-3">
+        <div class="col-md-3">
+          <input type="text" class="form-control" placeholder="First name"name="firstname" aria-label="First name">
+        </div>
+        <div class="col-md-3">
+          <input type="text" class="form-control" placeholder="Last name"name="lastname" aria-label="Last name">
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-3">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control"name="email" id="inputEmail4">
+        </div>
+        <div class="col-md-3">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control"name="password" id="inputPassword4">
+        </div>
+        <div class="col-8">
+          <label for="inputAddress" class="form-label">Address1</label>
+          <input type="text" class="form-control" id="inputAddress"name="address1" placeholder="1234 Main St">
+          
+        </div>
+        <div class="col-8">
+          <label for="inputAddress2" class="form-label">Address 2</label>
+          <input type="text" class="form-control" id="inputAddress2"name="address2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="col-md-3">
+          <label for="inputCity" class="form-label">City</label>
+          <input type="text" class="form-control" name="city"id="inputCity">
+        </div>
+        <div class="col-md-2">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState"name="state" class="form-select">
+            <option selected></option>
+            <option>DELHI</option>
+            <option>HIMACHAL</option>
+            <option>KOLKATA</option>
+            <option>PUNJAB</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="inputZip" class="form-label">Zip</label>
+          <input type="text" class="form-control"name="zipc" id="inputZip">
+        </div>
+        
+        </div>
+        <div class="col-6">
+          <button type="submit" class="btn btn-primary">Sign up</button>
+        </div>
+      </div>
+</form>
+
+{% endblock body%}
