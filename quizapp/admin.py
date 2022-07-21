@@ -1,7 +1,7 @@
 from django.contrib import admin
-from quizapp.models import Candidate , Questionmaker
+from quizapp.models import Student , Employee
 
 # Register your models here.
-admin.site.register(Candidate)
-admin.site.register(Questionmaker)
+admin.site.register(Student)
+admin.site.register(Employee)
 
