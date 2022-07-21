@@ -12,6 +12,7 @@ class Candidate(models.Model):
     state=models.CharField(max_length=22)
     zip=models.CharField(max_length=22)
     date=models.DateField()
+    password=models.CharField(max_length=30)
     def __str__(self):
         return self.email
 
@@ -25,6 +26,7 @@ class Questionmaker(models.Model):
     state=models.CharField(max_length=22)
     zipc=models.CharField(max_length=22) 
     date=models.DateField() 
+    password=models.CharField(max_length=30)
     def __str__(self):
         return self.email
 
