@@ -66,7 +66,7 @@ def loginu(request):
             return render(request,'login.html')
     return render(request,'login.html')  
 def loginus(request):
-    return render(request,'loginu.html')   
+    return render(request,'loginus.html')   
     
     #return HttpResponse("login here") 
 def logoutu(request):
