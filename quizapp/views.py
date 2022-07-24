@@ -56,18 +56,16 @@ def questionmaker(request):
     #return HttpResponse("question maker")  
 def loginu(request):
     if request.method == "POST":
-        email = request.POST.get('email')
+        username = request.POST.get('email')
         password =request.POST.get('password')
-        candidate =request.POST.get('candidate')
-        questionmaker =request.POST.get('questionmaker')
-        user = authenticate(email=email,password=password,questionmaker=questionmaker,candidate=candidate)
+        user = authenticate(username=username,password=password)
         if user is   not None:
             login(request,user)
-            return redirect(request,'/loginp')
+            return redirect(request,'/loginus')
         else:
             return render(request,'login.html')
     return render(request,'login.html')  
-def loginp(request):
+def loginus(request):
     return render(request,'loginu.html')   
     
     #return HttpResponse("login here") 

@@ -10,7 +10,7 @@ urlpatterns = [
     path('questionmaker',views.questionmaker,name='questionmaker'),
     path('loginu',views.loginu,name='loginu'),
     path('logoutu',views.logoutu,name='logoutu'),
-    path('loginp',views.loginp,name='loginp')
+    path('loginus',views.loginus,name='loginus')
 
 
 ]
