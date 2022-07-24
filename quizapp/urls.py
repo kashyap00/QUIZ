@@ -8,6 +8,9 @@ urlpatterns = [
     path('quiz',views.startquiz,name='quiz'),
     path('candidate',views.candidate,name='candidate'),
     path('questionmaker',views.questionmaker,name='questionmaker'),
-    path('login',views.login,name='login')
+    path('loginu',views.loginu,name='loginu'),
+    path('logoutu',views.logoutu,name='logoutu'),
+    path('loginp',views.loginp,name='loginp')
+
 
 ]

@@ -1,7 +1,16 @@
-from django.shortcuts import render , HttpResponse
+from django.shortcuts import redirect, render , HttpResponse 
+
 from datetime import datetime
 from quizapp.models import Student
 from quizapp.models import Employee
+from django.contrib.auth import logout 
+from django.contrib.auth import authenticate 
+from django.contrib.auth.models import User
+from django.contrib.auth import login
+
+
+
+
 
 
 # Create your views here.
@@ -45,6 +54,23 @@ def questionmaker(request):
         questionmaker.save()
     return render(request,'question maker.html')
     #return HttpResponse("question maker")  
-def login(request):
-    return render(request,'login.html')
-    #return HttpResponse("login here")    
+def loginu(request):
+    if request.method == "POST":
+        email = request.POST.get('email')
+        password =request.POST.get('password')
+        candidate =request.POST.get('candidate')
+        questionmaker =request.POST.get('questionmaker')
+        user = authenticate(email=email,password=password,questionmaker=questionmaker,candidate=candidate)
+        if user is   not None:
+            login(request,user)
+            return redirect(request,'/loginp')
+        else:
+            return render(request,'login.html')
+    return render(request,'login.html')  
+def loginp(request):
+    return render(request,'loginu.html')   
+    
+    #return HttpResponse("login here") 
+def logoutu(request):
+    logout(request) 
+    return redirect('/loginu')
