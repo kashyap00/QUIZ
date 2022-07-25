@@ -56,7 +56,7 @@ def questionmaker(request):
         questionmaker.save()
     return render(request,'question maker.html')
     #return HttpResponse("question maker")  
-def login(request):
+def loginu(request):
     if request.method == "POST":
         username = request.POST.get('email')
         password =request.POST.get('password')
@@ -65,12 +65,12 @@ def login(request):
             login(request,user)
             return redirect(request,'/loginus')
         else:
-            return render(request,'login.html')
+            return render(request,'templates/loginu.html')
     return render(request,'login.html')  
 def loginus(request):
     return render(request,'loginus.html')   
     
     #return HttpResponse("login here") 
-def logoutu(request):
+def logout(request):
     logout(request) 
     return redirect('/loginu')
