@@ -56,7 +56,7 @@ def questionmaker(request):
         questionmaker.save()
     return render(request,'question maker.html')
     #return HttpResponse("question maker")  
-def loginu(request):
+def login(request):
     if request.method == "POST":
         username = request.POST.get('email')
         password =request.POST.get('password')
