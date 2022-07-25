@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render , HttpResponse 
-
+from quizapp import models
 from datetime import datetime
 from quizapp.models import Student
 from quizapp.models import Employee
@@ -34,6 +34,7 @@ def candidate(request):
         
         student = Student( firstname=firstname,lastname=lastname,email=email,password=password, address1=address1 ,address2=address2 ,state= state, city=city ,zip=zip,date=datetime.today())
         #candidate = Candidate(firstname='firstname', lastname='lastname', email='email', address1='address1' ,address2='address2' ,state= 'state', city='city' ,zip='zip',date=datetime.today())
+    
         student.save()
     return render(request,'candidate.html')
 
@@ -51,6 +52,7 @@ def questionmaker(request):
         zipc = request.POST.get('zipc')
        
         questionmaker = Employee(firstname=firstname,lastname=lastname, email=email,password=password, address1= address1,address2=address2 ,state= state, city=city ,zipc=zipc,date=datetime.today())
+       
         questionmaker.save()
     return render(request,'question maker.html')
     #return HttpResponse("question maker")  
