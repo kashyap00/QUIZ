@@ -31,6 +31,9 @@ class Employee(models.Model):
     
     def __str__(self):
         return self.email
+class user(models.Model) :
+    username=models.CharField(max_length=122)  
+    password=models.CharField(max_length=30)    
 
 
 

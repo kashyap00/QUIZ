@@ -15,6 +15,7 @@ from django.contrib.auth import login
 
 # Create your views here.
 def index(request):
+    
     return render(request,'index.html')
     #return HttpResponse ("this my first page")
 def startquiz(request):
@@ -58,19 +59,23 @@ def questionmaker(request):
     #return HttpResponse("question maker")  
 def loginu(request):
     if request.method == "POST":
-        username = request.POST.get('email')
+        username = request.POST.get('username')
         password =request.POST.get('password')
-        user = authenticate(username=username,password=password)
+        user = authenticate(username=username,Password=password)
+    
         if user is   not None:
             login(request,user)
             return redirect(request,'/loginus')
+            
         else:
-            return render(request,'templates/loginu.html')
-    return render(request,'login.html')  
+            return HttpResponse("ooo teri!!!") 
+
+            #return render(request,'loginu.html')
+    return render(request,'loginu.html')  
 def loginus(request):
     return render(request,'loginus.html')   
     
     #return HttpResponse("login here") 
-def logout(request):
+def logoutu(request):
     logout(request) 
     return redirect('/loginu')

@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
 {% block body%}
-welcome to the login page
+welcome to the login page  {{request.user}}
 <br>
-<button type="button" class="btn btn-primary" href="/loginu">logout</button>
+<a button type="button" class="btn btn-primary" href="/logoutu">logout</button></a>
 {% endblock body%}
